@@ -1,6 +1,6 @@
 import os, sys
 
-log = file('/home/karlov3/paw/dewclaw/log', 'a')
+log = file('/home/karlov3/paw/dewclaw_site/log', 'a')
 
 
 INTERP = "/home/karlov3/paw/env/bin/python"
