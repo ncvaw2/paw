@@ -80,7 +80,7 @@ MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'myproj', 'static'),
+    os.path.join(BASE_DIR, 'dewclaw', 'static'),
 )
 SITE_ID = 1
 
@@ -120,7 +120,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'myproj', 'templates'),
+    os.path.join(BASE_DIR, 'main', 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -149,7 +149,7 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
-    'myproj',
+    'main',
     
 )
 
