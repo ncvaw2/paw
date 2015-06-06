@@ -1,9 +1,9 @@
 import os, sys
 
-log = file('/home/karlov3/foobar2/log', 'a')
+log = file('/home/karlov3/paw/dewclaw/log', 'a')
 
 
-INTERP = "/home/karlov3/foobar2/env/bin/python"
+INTERP = "/home/karlov3/paw/env/bin/python"
 if sys.executable != INTERP:
     print >>log, "Detected wrong interpreter location, swapping to %s" % (INTERP)
     #swapping interpreters will not flush any files
@@ -16,7 +16,7 @@ if sys.executable != INTERP:
 
 
 cwd = os.getcwd()
-myapp_directory = cwd + '/myproj'
+myapp_directory = cwd + '/dewclaw'
 
 
 print >>log, "myapp_directory %s" % (myapp_directory)
@@ -24,7 +24,7 @@ print >>log, "myapp_directory %s" % (myapp_directory)
 
 sys.path.insert(0,myapp_directory)
 sys.path.append(os.getcwd())
-os.environ['DJANGO_SETTINGS_MODULE'] = "myproj.settings"
+os.environ['DJANGO_SETTINGS_MODULE'] = "main.settings"
 
 print >>log, sys.path
 log.flush()
@@ -39,7 +39,7 @@ from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 # To cut django out of the loop, comment the above application = ... line ,
 # and remove "test" from the below function definition.
-def tapplication(environ, start_response):
+def testapplication(environ, start_response):
     status = '200 OK'
     output = 'Hello World! Running Python version ' + sys.version + '\n\n'
     response_headers = [('Content-type', 'text/plain'),

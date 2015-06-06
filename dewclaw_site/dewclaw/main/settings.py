@@ -36,9 +36,9 @@ ALLOWED_HOSTS = []
 
 
 
-ROOT_URLCONF = 'myproj.urls'
+ROOT_URLCONF = 'main.urls'
 
-WSGI_APPLICATION = 'myproj.wsgi.application'
+WSGI_APPLICATION = 'main.wsgi.application'
 
 
 # Database
