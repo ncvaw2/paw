@@ -1,5 +1,14 @@
-Will become a heading
+The PAW project
 ==============
+
+This is checked out to:
+
+~/paw on dreamhost
+
+
+
+
+
 
 Will become a sub heading
 --------------
