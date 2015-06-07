@@ -1,4 +1,5 @@
 import os
+
 gettext = lambda s: s
 
 """
@@ -13,6 +14,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -121,7 +123,6 @@ TEMPLATE_DIRS = (
 
 INSTALLED_APPS = (
     'djangocms_admin_style',
-    'djangocms_text_ckeditor',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -130,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    #  'djangocms_text_ckeditor',
     'cms',
     'menus',
     'sekizai',
@@ -146,7 +148,8 @@ INSTALLED_APPS = (
     'djangocms_video',
     'reversion',
     'main',
-    
+    'polls',
+
 )
 
 LANGUAGES = (
@@ -181,8 +184,6 @@ CMS_TEMPLATES = (
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
-
-
 
 MIGRATION_MODULES = {
     'djangocms_column': 'djangocms_column.migrations_django',
