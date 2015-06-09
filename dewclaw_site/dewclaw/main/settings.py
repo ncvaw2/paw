@@ -149,7 +149,9 @@ INSTALLED_APPS = (
     'reversion',
     'main',
     'polls',
-    'data'
+    'data',
+    'import_export'
+     #'django_extensions',
 
 )
 

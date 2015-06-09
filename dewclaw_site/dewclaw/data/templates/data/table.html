@@ -1,0 +1,20 @@
+<h1>{{ msg }}</h1>
+<h1>{{ table_name }}</h1>
+
+
+<table border="2px solid " cellpadding="3" cellspacing="3" color="Grey" rules="all" style="text-align: center;"><tbody border="2px solid ">
+
+    <tr>
+        {% for field in fields %}
+        <th>{{ field.name }}</th>
+            {% endfor %}
+    </tr>
+    {% for row in table %}
+    <tr>
+
+        {% for cell in row %}
+          <td>{{ cell }}</td>
+           {% endfor %}
+    </tr>
+    {% endfor %}
+</tbody></table>
