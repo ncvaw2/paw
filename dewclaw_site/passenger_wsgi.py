@@ -3,7 +3,7 @@ import os, sys
 log = file('/home/karlov3/paw/dewclaw_site/log', 'a')
 
 
-INTERP = "/home/karlov3/paw/env/bin/python"
+INTERP = "/home/karlov3/paw/env2/bin/python"
 if sys.executable != INTERP:
     print >>log, "Detected wrong interpreter location, swapping to %s" % (INTERP)
     #swapping interpreters will not flush any files
