@@ -2,6 +2,8 @@ from django.db import models
 
 # Create your models here.
 from django.db import models
+from adaptor.model import CsvDbModel
+
 
 class Person(models.Model):
     key_name = models.SlugField( unique=True) #lastname.firstname must be unique, lowercase, for URLs
@@ -42,8 +44,15 @@ class Branch(models.Model):
 
 
 class District(models.Model):
-    branch_code = models.CharField(max_length=1, choices=CHOICES_BRANCH)  # S= senate H = house
+    branch = models.CharField(max_length=1, choices=CHOICES_BRANCH)  # S= senate H = house
     number = models.DecimalField( max_digits=5,decimal_places=0)
+    version = models.DecimalField( max_digits=5,decimal_places=0) # Year district maps went into effect: 2011
+    counties = models.CharField(max_length=200)  #  comma seperated counties, create index?
+
+class DistrictCsv(CsvDbModel):
+     class Meta:
+        dbModel = District
+        delimiter = ","
 
 
 class Office(models.Model):

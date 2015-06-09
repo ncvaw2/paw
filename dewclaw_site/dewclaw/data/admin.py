@@ -11,6 +11,28 @@ from import_export import resources
 from .models import *
 
 
+class GenResource(resources.ModelResource):
+    name= {}
+    def __init__(self, classname):
+        name=classname
+    def foo(self):
+        self.name
+    class Meta:
+        model = Issue
+
+class GenAdmin(ImportExportModelAdmin):
+    #resource_class = IssueResource
+    pass
+
+
+class DistrictResource(resources.ModelResource):
+    class Meta:
+        model = District
+
+class DistrictAdmin(ImportExportModelAdmin):
+    resource_class = DistrictResource
+    pass
+
 class IssueResource(resources.ModelResource):
     class Meta:
         model = Issue
@@ -20,4 +42,5 @@ class IssueAdmin(ImportExportModelAdmin):
     pass
 
 admin.site.register(Issue, IssueAdmin)
-admin.site.register([Session,Bill,Branch,District,Office ,Person])
+admin.site.register(District, DistrictAdmin)
+admin.site.register([Session,Bill,Branch,Office ,Person])
