@@ -19,10 +19,11 @@ class Issue(models.Model):
 
 
 class Session(models.Model):
-    year = models.CharField(max_length=30)  # eg: 2015 using text instead of number to allow for special sessions.
+    year = models.SlugField(max_length=30)  # eg: 2015 using text instead of number to allow for special sessions.
     range = models.CharField(max_length=30)  # eg: 2015-2016 using text instead of number to allow for special sessions.
     ncleg_id = models.CharField(max_length=30)  # eg: 2015       #ID on ncleg.net website
-
+    def __str__(self):
+        return self.range
 
 class Bill(models.Model):
     session = models.ForeignKey(Session)
@@ -67,7 +68,7 @@ class OfficeFill(models.Model):
 class Election(models.Model):
     year = models.DecimalField( max_digits=6,decimal_places=0)
 
-class Canadate(models.Model):
+class Candidate(models.Model):
     person = models.ForeignKey(Person)
     office = models.ForeignKey(Office)
     office = models.ForeignKey(Election)

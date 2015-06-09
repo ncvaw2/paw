@@ -45,7 +45,7 @@ def table_generic(request, table_name):
     table = []
     fields = []
     if (inspect.isclass(table_cl)):
-        msg = "found it!"
+        msg = ""
         fields=table_cl._meta.fields
         objlist=table_cl.objects.all()
 

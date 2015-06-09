@@ -24,6 +24,7 @@ class GenAdmin(ImportExportModelAdmin):
     #resource_class = IssueResource
     pass
 
+#TODO - there as to be a generic way to define these classes
 
 class DistrictResource(resources.ModelResource):
     class Meta:
@@ -32,6 +33,8 @@ class DistrictResource(resources.ModelResource):
 class DistrictAdmin(ImportExportModelAdmin):
     resource_class = DistrictResource
     pass
+
+
 
 class IssueResource(resources.ModelResource):
     class Meta:
