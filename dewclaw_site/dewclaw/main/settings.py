@@ -150,8 +150,8 @@ INSTALLED_APPS = (
     'main',
     'polls',
     'data',
-    'import_export'
-     #'django_extensions',
+    'import_export',
+    # 'django_extensions',
 
 )
 

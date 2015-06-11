@@ -5,10 +5,19 @@ from django.db import models
 from adaptor.model import CsvDbModel
 
 
+CODE_MALE='S'
+CODE_FEMALE='S'
+CHOICES_GENDER = (
+    (CODE_MALE, 'M'),
+    (CODE_FEMALE, 'F'),
+   # ('J', 'Judges'),
+)
 class Person(models.Model):
     key_name = models.SlugField( unique=True) #lastname.firstname must be unique, lowercase, for URLs
     name_first = models.CharField(max_length=40)
     name_last = models.CharField(max_length=40)
+    name_full =  models.CharField(max_length=200)
+    gender = models.CharField(max_length=1, choices=CHOICES_GENDER)  # S= senate H = house
 
 class Issue(models.Model):
     text_id = models.CharField(max_length=30)
